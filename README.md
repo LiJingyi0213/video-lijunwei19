@@ -38,9 +38,9 @@ ctrl+c
 ```
 
 # Reference 
-Multithreading: https://www.geeksforgeeks.org/multithreading-python-set-1/
-\n Queue : https://www.geeksforgeeks.org/queue-in-python/
-\n Subprocess: https://www.webcodegeeks.com/python/python-subprocess-example/
+### Multithreading: https://www.geeksforgeeks.org/multithreading-python-set-1/
+### Queue : https://www.geeksforgeeks.org/queue-in-python/
+### Subprocess: https://www.webcodegeeks.com/python/python-subprocess-example/
 
 
 
