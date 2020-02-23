@@ -22,16 +22,25 @@ Ubuntu tutorial: https://linuxize.com/post/how-to-install-ffmpeg-on-ubuntu-18-04
 Run programe
 ```
 python main.py
+
+twitter_ID: NBA
+
+twitter_ID: 
+```
+Result
+```
+twitter image store in to processed_imags folder
+video store into video folder 
 ```
 End program
 ```
 ctrl+c 
 ```
 
-# Prepare
-
-
 # Reference 
+Multithreading: https://www.geeksforgeeks.org/multithreading-python-set-1/
+Queue : https://www.geeksforgeeks.org/queue-in-python/
+Subprocess: https://www.webcodegeeks.com/python/python-subprocess-example/
 
 
 
