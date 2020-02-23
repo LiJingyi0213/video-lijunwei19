@@ -2,11 +2,13 @@ import requests
 import textwrap
 from io import BytesIO
 from PIL import Image, ImageDraw, ImageFont
+import twitter_handling as twh
 
 def create_images(user_id, profile_url, tweets):
     count = 0;
     for tweet in tweets:
       try :
+        print(tweet.full_text)
         txt = tweet.full_text
       except AttributeError:
         return
@@ -25,17 +27,5 @@ def create_images(user_id, profile_url, tweets):
           y += 15
       draw.text((120, 170), user_id, font=font, fill="black")
       offset = (50, 150)
-      img_list = []
-      try:
-          if 'media' in tweet.entities:
-              for medium in tweet.entities['media']:
-                  img_list.append(medium['media_url'])
-          if len(img_list) != 0:
-              response = requests.get(img_list[0])
-              img = Image.open(BytesIO(response.content))
-              background.paste(img, (100, y))
-      except Exception as e:
-          print(e)
       background.paste(img, offset)
       background.save(r'processed_imgs/'+ user_id +'_''img'+str(count)+'.png')
-

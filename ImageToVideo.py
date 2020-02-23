@@ -1,12 +1,10 @@
 import subprocess
 
 def imgToVideo(username):
-  fileName =  'processed_imgs/'+
-                       username +
-                      'img' +'%d'+'.png'
+  fileName =  'processed_imgs/'+username +'_'+'img' +'%d'+'.png'
 
-  normalVideo =  "video/" + username + "normal.avi"
-  betterVideo =  "video/" + username + "better.mp4"
+  avi =  "video/" + username + "normal.avi"
+  mp4 =  "video/" + username + "better.mp4"
 
   # convert jpg to mp4
   # ffmpeg -i img-%02d.png video_name.avi #2-digit number for name
@@ -15,10 +13,14 @@ def imgToVideo(username):
   # 0.3 for frame rate = 3s per image    
   subprocess.call(['ffmpeg', '-framerate', '0.3', '-i', 
     fileName, 
-    normalVideo])
+    avi])
 
-  subprocess.call(['ffmpeg', '-i', normalVideo, '-c:a', 'copy', 
+  subprocess.call(['ffmpeg', '-i', avi, '-c:a', 'copy', 
     '-c:v', 'copy', '-r', '30', '-s', 'hd720', '-b:v', '2M', 
-    betterVideo])
+    mp4])
 
-imgToVideo('IBM')
+def main():
+  imgToVideo('IBM')
+
+if __name__ == '__main__':
+  main()

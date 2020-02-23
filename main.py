@@ -51,3 +51,4 @@ if __name__ == '__main__':
       t2 = threading.Thread(name="video_process", target=video_process, args=(q1, completion_q1))
       t2.start()
     time.sleep(.1)  
+

@@ -2,6 +2,7 @@ import tweepy as tp
 import configparser 
 import time
 import pprint as pp  
+import image_processing as IMP
 
 class twitter_feed_catching():
 
@@ -41,7 +42,11 @@ class twitter_feed_catching():
 
 def main():
   a = twitter_feed_catching("keys")
-  tweets= a.get_users_tweets('IBM')
+  username = input("twitter_ID: ")
+  profile_url = a.get_user_pic(username)
+  print(profile_url)
+  tweets = a.get_users_tweets(username)
+  IMP.create_images(username, profile_url, tweets)
 
 if __name__ == '__main__':
   main()
